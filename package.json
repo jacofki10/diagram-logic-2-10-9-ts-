@@ -1,5 +1,5 @@
 {
-  "name": "webpack-typescript-starter",
+  "name": "webpack-typescript",
   "version": "0.0.1",
   "description": "A simple Webpack 4 starter with TypeScript transpilation",
   "main": "index.js",
@@ -18,7 +18,7 @@
     "webpack4",
     "typescript"
   ],
-  "author": "Juri Strumpflohner",
+  "author": "Diego Arnes",
   "license": "ISC",
   "devDependencies": {
     "@babel/cli": "^7.2.3",
@@ -30,8 +30,10 @@
     "@types/jasmine": "2.8.7",
     "@types/node": "7.0.0",
     "awesome-typescript-loader": "5.2.0",
+    "html-loader-srcset": "^0.5.6",
+    "html-webpack-plugin": "^4.5.0",
     "jasmine-core": "3.1.0",
-    "karma": "2.0.4",
+    "karma": "^5.2.3",
     "karma-jasmine": "1.1.2",
     "karma-phantomjs-launcher": "1.0.4",
     "karma-webpack": "3.0.0",
