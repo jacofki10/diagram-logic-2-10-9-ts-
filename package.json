@@ -5,8 +5,8 @@
   "main": "webpack.config.js",
   "scripts": {
     "start": "webpack-dev-server --port 9000 --inline --progress --profile --colors --watch --content-base  --config webpack.dev.js --open",
-    "build": "webpack --config --config webpack.prod.js",
-    "build.prod": "webpack --config webpack.config.js -p",
+    "build": "webpack --config webpack.prod.js --mode production",
+    "build.prod": "webpack --config webpack.prod.js -p",
     "build.esnext": "npm run build:types && npm run build:js",
     "build:types": "tsc --emitDeclarationOnly",
     "build:js": "babel src --out-dir dist --extensions \".ts,.tsx\" --source-maps inline",

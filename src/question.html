@@ -16,17 +16,19 @@
                 aria-valuemax="100"></div>
         </div>
     </header>
-    <form id="question_area">
-        <div id="question"></div>
-        <div id="q_btn">
-            <button type="button" id="q_answer1">
-                はい
-            </button>
-            <button type="button" id="q_answer2">
-                いいえ
-            </button>
-        </div>
-    </form>
+     <form id="question_area" class="mainBurger">
+    <pre id="question"></pre>
+    <div id="q_btn">
+      <button type="button" id="q_answer1" class="squareBlueButtom">
+       はい
+      </button>
+      <button type="button" id="q_answer2" class="squareRedButtom">
+       いいえ
+      </button>
+    </div>
+    <button class="resetButtom" onclick="sessionStorage.clear();window.location.href = 'index.html'; return false;">top へ戻る</button>
+    <div style="clear: both;"></div>
+  </form>
     <div id="data_area"></div>
 </body>
 

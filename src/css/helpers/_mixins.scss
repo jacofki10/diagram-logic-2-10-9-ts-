@@ -4,3 +4,53 @@
 	background-position: $bgPosition;
 	background-size: cover;
 }
+@mixin radius40Buttom($bgColor, $shadowColor, $textColor,$width: 250px, $height: 60px, $font-size: 17px){
+	background: $bgColor 0% 0% no-repeat padding-box;
+	font-weight: bold;
+	box-shadow: 0 8px  $shadowColor;
+	border-radius: 40px;
+	color: $textColor;
+	width: $width;
+    height: $height;
+    font-size: $font-size;
+	margin: 10px;
+	position: relative;
+	.arrow {
+	  border: 3px solid #ffffff;
+      border-width: 0 3px 3px 0;
+      display: inline-block;
+	  padding: 3px;
+	  position: relative;
+	  right: -7px;
+	  bottom: 2px;
+	  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+	}
+	&:hover {
+	box-shadow: 0 4px $shadowColor;
+	top: 2px;
+	}
+	&:active {
+	box-shadow: 0 0 $shadowColor;
+	top: 6px;
+	}
+}
+@mixin squareButtom($borderColor, $shadowColor){
+background: #ffffff 0% 0% no-repeat padding-box;
+border: 5px solid $borderColor;
+box-shadow: 0px 8px 0px $shadowColor;
+border-radius: 15px;
+width: 197px;
+height: 150px;
+margin: 13px;
+vertical-align: top;
+position: relative;
+&:hover {
+	box-shadow: 0 4px $shadowColor;
+	top: 2px;
+	}
+	&:active {
+	box-shadow: 0 0 $shadowColor;
+	top: 6px;
+	}
+}

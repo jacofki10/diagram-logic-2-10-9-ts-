@@ -1,0 +1,35 @@
+#question_area {
+  .burgerTopRight {
+    font: normal normal bold 14px/49px Meiryo, sans-serif;
+    color: #000000;
+
+    #q_progress_rest {
+      font: normal normal bold 20px/49px Meiryo, sans-serif;
+      color: #00a0e9;
+      letter-spacing: 1.6px;
+      font-size: 20px;
+    }
+  }
+
+  #question {
+    margin: 97px auto 20px;
+    max-width: 516px;
+    white-space: pre-wrap;
+  }
+/* button */
+  #q_btn {
+    overflow: hidden;
+    button{
+       font-size: 28px;
+    }
+  }
+  .resetButtom {
+    float: left;
+    margin: 40px;
+  }
+}
+
+#data_area,
+.tag {
+  display: none;
+}

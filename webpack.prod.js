@@ -6,7 +6,7 @@ const OptimazeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CssUrlRelativePlugin = require('css-url-relative-plugin');
-const common = require('./webpack.common');
+const common = require('./webpack.config');
 
 module.exports = merge(common, {
     mode: 'production',
