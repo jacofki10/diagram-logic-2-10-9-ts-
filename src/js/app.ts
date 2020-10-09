@@ -1,6 +1,6 @@
 import { questions } from './questions';
 import { nextQuestion } from './redirect';
-// import '../css/style.scss';
+import '../css/style.scss';
 
 export const scoreData: any = { CP: 0, NP: 0, A: 0, FC: 0, AC: 0 };
 const List: any = [];

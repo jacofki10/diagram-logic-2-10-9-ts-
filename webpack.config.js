@@ -1,7 +1,5 @@
 const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ROOT = path.resolve(__dirname, 'src');
-const DESTINATION = path.resolve(__dirname, 'dist');
 
 module.exports = {
     context: ROOT,
@@ -11,26 +9,6 @@ module.exports = {
         'index': './js/index.ts',
         'result': './js/result.ts',
 
-    },
-    plugins: [
-        new HtmlWebpackPlugin({
-            template: './index.html',
-            chunks: ['index'],
-        }),
-        new HtmlWebpackPlugin({
-            template: './question.html',
-            filename: 'question.html',
-            chunks: ['main'],
-        }),
-        new HtmlWebpackPlugin({
-            template: './result.html',
-            filename: 'result.html',
-            chunks: ['result'],
-        }),
-    ],
-    output: {
-        filename: 'js/[name].[contentHash].js',
-        path: DESTINATION
     },
 
     resolve: {
