@@ -1,5 +1,6 @@
 import { questions } from './questions';
-import { nextQuestion } from './redirect';
+import { redirect } from './redirect';
+import './proguessBar';
 import '../css/style.scss';
 
 export const scoreData: any = { CP: 0, NP: 0, A: 0, FC: 0, AC: 0 };
@@ -13,7 +14,7 @@ function shuffle(a: any) {
     }
     return a;
 }
-const finalQuestions = shuffle(questions);
+const finalQuestions = shuffle(questions); // Remove shuffle() for not shuffle//
 console.log(finalQuestions);
 
 // INPUT IT IN data_area //
@@ -31,10 +32,8 @@ document.getElementById('data_area').innerHTML = html;
 // SET THE NEXT  QUESTIONS IN THE QUIZ //
 export const setupQuestion = (no: any) => {
     (<HTMLElement>document.getElementById('question')).innerHTML = List[no].Question;
-    (<HTMLElement>document.getElementById('q_answer1')).innerHTML = List[no].Answer1;
     document.getElementById('q_answer1').setAttribute('data-type', List[no].Type);
     document.getElementById('q_answer1').setAttribute('data-no', no);
-    (<HTMLElement>document.getElementById('q_answer2')).innerHTML = List[no].Answer2;
     document.getElementById('q_answer2').setAttribute('data-type', List[no].Type);
     document.getElementById('q_answer2').setAttribute('data-no', no);
     document.querySelector('#q_progress_rest').textContent = no;
@@ -72,16 +71,34 @@ for (const button of buttons) {
         }
     });
 }
-// PROGUESS BAR INCREASE
-let meterMargin = 22;
-let progress = 0;
-for (const button of buttons) {
-    button.addEventListener('click', function () {
-        progress += 10;
-        meterMargin += 7;
-        (<HTMLElement>document.querySelector('#meter_area')).style.marginLeft = `${meterMargin}%`;
-        (<HTMLElement>document.querySelector('.progress-bar')).style.width = `${progress}%`;
-    });
-}
-
 init();
+
+// GET THE RESULT AND LINK TO HIS PATERN//
+const nextQuestion = (currentNo: number) => {
+    if (currentNo === 10) {
+        let scoreLevel = '';
+        Object.keys(scoreData).forEach(type => {
+            if (type === 'CP') {
+                scoreLevel += scoreData[type] + 1;
+                console.log(scoreLevel, type);
+            } else if (type === 'NP') {
+                scoreLevel += scoreData[type] + 1;
+                console.log(scoreLevel, type);
+            } else if (type === 'A') {
+                scoreLevel += scoreData[type] + 1;
+                console.log(scoreLevel, type);
+            } else if (type === 'FC') {
+                scoreLevel += scoreData[type] + 1;
+                console.log(scoreLevel, type);
+            } else if (type === 'AC') {
+                scoreLevel += scoreData[type] + 1;
+                console.log(scoreLevel, type);
+            }
+        });
+        sessionStorage.setItem('digDetail', scoreLevel);
+        console.log(scoreLevel);
+        redirect(scoreLevel);
+        return false;
+    }
+    setupQuestion(currentNo + 1);
+};
