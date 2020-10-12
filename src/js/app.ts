@@ -30,8 +30,8 @@ for (let i = 0; i < finalQuestions.length; i += 1) {
 document.getElementById('data_area').innerHTML = html;
 
 // SET THE NEXT  QUESTIONS IN THE QUIZ //
-export const setupQuestion = (no: any) => {
-    (<HTMLElement>document.getElementById('question')).innerHTML = List[no].Question;
+const setupQuestion = (no: any) => {
+    document.getElementById('question').innerHTML = List[no].Question;
     document.getElementById('q_answer1').setAttribute('data-type', List[no].Type);
     document.getElementById('q_answer1').setAttribute('data-no', no);
     document.getElementById('q_answer2').setAttribute('data-type', List[no].Type);
@@ -60,8 +60,8 @@ const clickAnswer = (numbers: any, type: any, currentNo: number) => {
     nextQuestion(currentNo);
 };
 const buttons = document.querySelectorAll('#q_answer1, #q_answer2');
-for (const button of buttons) {
-    button.addEventListener('click', function () {
+for (const button of buttons as any) {
+    button.addEventListener('click', function (this: any) {
         const currentNo = Number(this.dataset.no);
         const { type } = this.dataset;
         if (this.id === 'q_answer1') {
@@ -74,10 +74,11 @@ for (const button of buttons) {
 init();
 
 // GET THE RESULT AND LINK TO HIS PATERN//
-const nextQuestion = (currentNo: number) => {
+export const nextQuestion = (currentNo: number) => {
+
     if (currentNo === 10) {
         let scoreLevel = '';
-        Object.keys(scoreData).forEach(type => {
+        Object.keys(scoreData).forEach((type, index) => {
             if (type === 'CP') {
                 scoreLevel += scoreData[type] + 1;
                 console.log(scoreLevel, type);
