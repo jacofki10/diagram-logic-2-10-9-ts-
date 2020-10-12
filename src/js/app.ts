@@ -41,7 +41,8 @@ const setupQuestion = (no: any) => {
 
 // INIT QUIZ //
 const init = () => {
-    document.querySelectorAll('.diagramData').forEach((element, index) => {
+    const myNodeList = document.querySelectorAll('.diagramData');
+    [].forEach.call(myNodeList, function (element: any, index: any) {
         const Type = element.querySelector('.type').innerHTML;
         const Question = element.querySelector('.question').innerHTML;
         List[index + 1] = {
@@ -49,6 +50,7 @@ const init = () => {
             Question,
         };
     });
+
     setupQuestion(1);
 };
 
