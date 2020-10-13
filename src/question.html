@@ -2,34 +2,36 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="Description" content="Question page of the diagram logic">
+  <title>Question</title>
 </head>
 
 <body>
-    <header>
-        <h2 class="logo">診断</h2>
-        <div id="meter_area"><span id="q_progress_rest"></span>/10</div>
-        <div class="progress">
-            <div class="progress-bar" role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0"
-                aria-valuemax="100"></div>
-        </div>
-    </header>
-     <form id="question_area" class="mainBurger">
+  <header>
+    <h2 class="logo">診断</h2>
+    <div id="meter_area"><span id="q_progress_rest"></span>/10</div>
+    <div class="progress">
+      <div class="progress-bar" role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0"
+        aria-valuemax="100"></div>
+    </div>
+  </header>
+  <form id="question_area" class="mainBurger">
     <pre id="question"></pre>
     <div id="q_btn">
       <button type="button" id="q_answer1" class="squareBlueButtom">
-       はい
+        はい
       </button>
       <button type="button" id="q_answer2" class="squareRedButtom">
-       いいえ
+        いいえ
       </button>
     </div>
-    <button class="resetButtom" onclick="sessionStorage.clear();window.location.href = 'index.html'; return false;">top へ戻る</button>
+    <button class="resetButtom" onclick="sessionStorage.clear();window.location.href = 'index.html'; return false;">top
+      へ戻る</button>
     <div style="clear: both;"></div>
   </form>
-    <div id="data_area"></div>
+  <div id="data_area"></div>
 </body>
 
 </body>
