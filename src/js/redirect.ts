@@ -1,11 +1,11 @@
 // IINSERT DATA IN RESULT.HTML
 const setResult = (type: any) => {
         sessionStorage.setItem('dig', type + 1);
-        window.location.href = 'result.html';
+        window.location.href = `result.html?id=${type + 1}`;
 };
 
 // GET THE RESULT AND LINK TO HIS PATERN//
-export const redirect = (scoreLevel: any) => {
+export const redirect = (scoreLevel: string) => {
         switch (scoreLevel) {
                 // パターン1
                 case '12211':

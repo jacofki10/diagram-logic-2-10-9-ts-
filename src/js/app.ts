@@ -3,11 +3,11 @@ import { redirect } from './redirect';
 import './proguessBar';
 import '../css/style.scss';
 
-export const scoreData: any = { CP: 0, NP: 0, A: 0, FC: 0, AC: 0 };
-const List: any = [];
+const scoreData: { [index: string]: number } = { CP: 0, NP: 0, A: 0, FC: 0, AC: 0 };
+const List: { [index: number]: any } = [];
 
 // SHUFFLE QUESTIONS.JS //
-function shuffle(a: any) {
+function shuffle(a: Array<{ [index: string]: string }>) {
     for (let i = a.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
         [a[i], a[j]] = [a[j], a[i]];
@@ -30,7 +30,7 @@ for (let i = 0; i < finalQuestions.length; i += 1) {
 document.getElementById('data_area').innerHTML = html;
 
 // SET THE NEXT  QUESTIONS IN THE QUIZ //
-const setupQuestion = (no: any) => {
+const setupQuestion = (no: number | any) => {
     document.getElementById('question').innerHTML = List[no].Question;
     document.getElementById('q_answer1').setAttribute('data-type', List[no].Type);
     document.getElementById('q_answer1').setAttribute('data-no', no);
@@ -42,7 +42,7 @@ const setupQuestion = (no: any) => {
 // INIT QUIZ //
 const init = () => {
     const myNodeList = document.querySelectorAll('.diagramData');
-    [].forEach.call(myNodeList, function (element: any, index: any) {
+    [].forEach.call(myNodeList, function (element: any, index: number) {
         const Type = element.querySelector('.type').innerHTML;
         const Question = element.querySelector('.question').innerHTML;
         List[index + 1] = {
@@ -55,7 +55,7 @@ const init = () => {
 };
 
 // ON CLICK ACTION / /
-const clickAnswer = (numbers: any, type: any, currentNo: number) => {
+const clickAnswer = (numbers: number, type: number, currentNo: number) => {
     if (scoreData[type] >= 8) return;
     scoreData[type] += numbers;
     console.log(`Question  ${currentNo} Answered  ${numbers}`, scoreData);
@@ -77,10 +77,10 @@ init();
 
 // GET THE RESULT AND LINK TO HIS PATERN//
 export const nextQuestion = (currentNo: number) => {
-
     if (currentNo === 10) {
         let scoreLevel = '';
         Object.keys(scoreData).forEach((type, index) => {
+
             if (type === 'CP') {
                 scoreLevel += scoreData[type] + 1;
                 console.log(scoreLevel, type);

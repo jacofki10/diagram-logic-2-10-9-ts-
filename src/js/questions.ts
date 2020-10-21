@@ -1,5 +1,5 @@
 // QUESTIONS ARRAY//
-export const questions = [
+export const questions: Array<{ [index: string]: string }> = [
         {
                 questionNumber: '1',
                 type: 'CP',

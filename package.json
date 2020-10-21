@@ -55,7 +55,9 @@
     "webpack-dev-server": "^3.11.0",
     "webpack-merge": "^5.2.0"
   },
-  "dependencies": {},
+  "dependencies": {
+    "url-search-params-polyfill": "^8.1.0"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/jacofki10/diagram-logic-2-10-9-ts-.git"
