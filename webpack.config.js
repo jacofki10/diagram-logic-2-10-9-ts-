@@ -43,7 +43,18 @@ module.exports = {
                 test: /\.ts$/,
                 exclude: [/node_modules/],
                 use: 'awesome-typescript-loader'
-            }
+            },
+            {
+                test: /\.html$/,
+                use: [
+                    {
+                        loader: 'html-loader-srcset',
+                        options: {
+                            minimize: true,
+                        },
+                    },
+                ],
+            },
         ]
     },
 

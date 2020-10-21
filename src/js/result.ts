@@ -1,5 +1,5 @@
 import 'url-search-params-polyfill';
-
+import './SocialMedia';
 import { result } from './answers';
 import '../css/style.scss';
 

@@ -41,6 +41,7 @@ module.exports = merge(common, {
                         outputPath: 'images',
                         publicPath: 'images',
                         useRelativePaths: true,
+                        esModule: false,
                     },
                 },
             },

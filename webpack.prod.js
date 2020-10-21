@@ -108,6 +108,7 @@ module.exports = merge(common, {
                     loader: 'file-loader',
                     query: {
                         name: 'images/[name].[ext]',
+                        esModule: false,
                     },
                 },
             },
